@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8834197-1BEA-448E-B23A-A319CA55D971}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>Game</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AiEngine\DefaultAi.cs" />
+    <Compile Include="AiEngine\NpcAi.cs" />
+    <Compile Include="AiEngine\PlayerAi.cs" />
+    <Compile Include="Controllers\BattleController.cs" />
+    <Compile Include="Controllers\DeathController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DialogController.cs" />
+    <Compile Include="Controllers\NpcMoveController.cs" />
+    <Compile Include="Controllers\PlayerTradeController.cs" />
+    <Compile Include="Controllers\TradeController.cs" />
+    <Compile Include="Define.cs" />
+    <Compile Include="GameCore.cs" />
+    <Compile Include="Logic\PlayerLogic.cs" />
+    <Compile Include="Network\UserManager.cs" />
+    <Compile Include="Network\DatabaseConnection.cs" />
+    <Compile Include="Packet\Client\RpChatNormal.cs" />
+    <Compile Include="Packet\Client\Friend\RpDeleteFriend.cs" />
+    <Compile Include="Packet\Client\Friend\RpAddFriend.cs" />
+    <Compile Include="Packet\Client\Friend\RpFriendList.cs" />
+    <Compile Include="Packet\Client\Guild\RpGuildMasterChange.cs" />
+    <Compile Include="Packet\Client\Guild\RpGuildDeleteMember.cs" />
+    <Compile Include="Packet\Client\Party\RpPartyDeleteMember.cs" />
+    <Compile Include="Packet\Client\Party\RpPartyList.cs" />
+    <Compile Include="Packet\Client\Party\RpPartyResult.cs" />
+    <Compile Include="Packet\Client\Party\RpParty.cs" />
+    <Compile Include="Packet\Client\RpTradeMoney.cs" />
+    <Compile Include="Packet\Client\RpTradeCancelButton.cs" />
+    <Compile Include="Packet\Client\RpTradeOkButton.cs" />
+    <Compile Include="Packet\Client\RpTradeResponse.cs" />
+    <Compile Include="Packet\Client\RpTradeRequest.cs" />
+    <Compile Include="Packet\Client\RpDurationRepair.cs" />
+    <Compile Include="Packet\Client\RpItemSell.cs" />
+    <Compile Include="Packet\Client\RpItemBuy.cs" />
+    <Compile Include="Packet\Client\RpCloseWindow.cs" />
+    <Compile Include="Packet\Client\RpItemUse.cs" />
+    <Compile Include="Packet\Client\RpItemThrow.cs" />
+    <Compile Include="Packet\Client\RpMagicAttackCancel.cs" />
+    <Compile Include="Packet\Client\RpItemGet.cs" />
+    <Compile Include="Packet\Client\Shop\RpShopClose.cs" />
+    <Compile Include="Packet\Client\Shop\RpShopOpen.cs" />
+    <Compile Include="Packet\Client\Shop\RpBuyItemFromShop.cs" />
+    <Compile Include="Packet\Client\Shop\RpShopSetItemPrice.cs" />
+    <Compile Include="Packet\Client\RpTargetTeleport.cs" />
+    <Compile Include="Packet\Client\RpTeleport.cs" />
+    <Compile Include="Packet\Client\RpMagicAttack.cs" />
+    <Compile Include="Packet\Client\RpAction.cs" />
+    <Compile Include="Packet\Client\RpPlayerCreate.cs" />
+    <Compile Include="Packet\Client\RpPlayerDelete.cs" />
+    <Compile Include="Packet\Client\RpClientLive.cs" />
+    <Compile Include="Packet\Client\RpLogin.cs" />
+    <Compile Include="Packet\Client\RpLogout.cs" />
+    <Compile Include="Packet\Client\RpPlayerEnterWorld.cs" />
+    <Compile Include="Packet\Client\RpAttack.cs" />
+    <Compile Include="Packet\Client\RpWalk.cs" />
+    <Compile Include="Packet\Client\RpMove.cs" />
+    <Compile Include="Packet\Client\RpPlayersList.cs" />
+    <Compile Include="Packet\Client\RpChatWisper.cs" />
+    <Compile Include="Packet\Client\RpBeattackRecive.cs" />
+    <Compile Include="Packet\Client\RpChatRecive.cs" />
+    <Compile Include="Packet\Client\RpCheckMain.cs" />
+    <Compile Include="Packet\Client\RpDurationMagicRecive.cs" />
+    <Compile Include="Packet\Client\RpItemMove.cs" />
+    <Compile Include="Packet\Client\RpMoveDataLoadingOK.cs" />
+    <Compile Include="Packet\OpCodes.cs" />
+    <Compile Include="Packet\PacketHandler.cs" />
+    <Compile Include="Packet\Client\RpHackCheck.cs" />
+    <Compile Include="Packet\Client\RpLevelUpPointAdd.cs" />
+    <Compile Include="Packet\Client\RpTalk.cs" />
+    <Compile Include="Packet\Server\Account\CreateAnswer\SpPlayerCreateFail.cs" />
+    <Compile Include="Packet\Server\Account\DeleteAnswers\SpPlayerDeleteGuildBlock.cs" />
+    <Compile Include="Packet\Server\Account\DeleteAnswers\SpPlayerDeleteBanned.cs" />
+    <Compile Include="Packet\Server\Account\DeleteAnswers\SpPlayerDeleteInvalidNumber.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpAccountAlreadyConnected.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpAccountBlocked.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpAccountInvalid.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpAuthenticationAccepted.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpConnctionClosedFails.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpConnectionError.cs" />
+    <Compile Include="Packet\Server\Account\DeleteAnswers\SpPlayerDeleteSuccess.cs" />
+    <Compile Include="Packet\Server\Account\CreateAnswer\SpPlayerCreateSuccess.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpInvalidPassword.cs" />
+    <Compile Include="Packet\Server\SpPlayerViewport.cs" />
+    <Compile Include="Packet\Server\SpLevelUp.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpNewVersionRequired.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpNoChargeInfo.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpOnlyPlayersAge15.cs" />
+    <Compile Include="Packet\Server\Player\SpTradeTarget.cs" />
+    <Compile Include="Packet\Server\Player\SpSetItemDuration.cs" />
+    <Compile Include="Packet\Server\Player\SpPlayerEnterWorld.cs" />
+    <Compile Include="Packet\Server\Account\SpPlayersList.cs" />
+    <Compile Include="Packet\Server\SpSendClientVersion.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpServerOverloaded.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpSubscriptionTermIpOver.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpSubscriptionTermOver.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpSubscriptionTimeIpOver.cs" />
+    <Compile Include="Packet\Server\Account\LoginAnswers\SpSubscriptionTimeOver.cs" />
+    <Compile Include="Packet\Server\SpWelcomeNotice.cs" />
+    <Compile Include="Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AiService.cs" />
+    <Compile Include="Service\ChatService.cs" />
+    <Compile Include="Service\ControlerService.cs" />
+    <Compile Include="Service\FeedbackService.cs" />
+    <Compile Include="Service\GuildService.cs" />
+    <Compile Include="Service\MapService.cs" />
+    <Compile Include="Service\PartyService.cs" />
+    <Compile Include="Service\PlayerService.cs" />
+    <Compile Include="Service\VisibleService.cs" />
+    <Compile Include="Starter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorldManager.cs" />
+    <EmbeddedResource Include="Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A11C31FD-2575-4212-A107-726406DFAA51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Database\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\ExpTabele.cs" />
+    <Compile Include="Calculations\Stats.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Crypt\CryptProcess.cs" />
+    <Compile Include="Database\TemplateDefaultPlayer.cs" />
+    <Compile Include="Database\DatabaseOperations.cs" />
+    <Compile Include="Database\MySqlDatabaseConnection.cs" />
+    <Compile Include="Define.cs" />
+    <Compile Include="Enums\CheckNameResult.cs" />
+    <Compile Include="Enums\CommonEnum.cs" />
+    <Compile Include="Enums\Races.cs" />
+    <Compile Include="Model\Ai.cs" />
+    <Compile Include="Model\Attack.cs" />
+    <Compile Include="Model\ChaosMachine.cs" />
+    <Compile Include="Model\Creature.cs" />
+    <Compile Include="Model\DefaultObject.cs" />
+    <Compile Include="Model\Duel.cs" />
+    <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\Friend.cs" />
+    <Compile Include="Model\Gate.cs" />
+    <Compile Include="Model\Guild.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Map.cs" />
+    <Compile Include="Model\Monster.cs" />
+    <Compile Include="Model\Npc.cs" />
+    <Compile Include="Model\Party.cs" />
+    <Compile Include="Model\Pet.cs" />
+    <Compile Include="Model\Shop.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Storage.cs" />
+    <Compile Include="Model\Trade.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Network\PipeMessageEventArgs.cs" />
+    <Compile Include="Network\PipeClient.cs" />
+    <Compile Include="Network\PipeServer.cs" />
+    <Compile Include="Packet\AbstractPacketOperation.cs" />
+    <Compile Include="Packet\PacketOperationAttribute.cs" />
+    <Compile Include="Packet\PacketIdentyfy.cs" />
+    <Compile Include="Packet\PacketOperationManager.cs" />
+    <Compile Include="Packet\PacketSplit.cs" />
+    <Compile Include="Crypt\SimpleModulus.cs" />
+    <Compile Include="Crypt\Xor32Modulus.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Network\SocketClient.cs" />
+    <Compile Include="Network\SocketClientDataEventArgs.cs" />
+    <Compile Include="Network\SocketClientEventArgs.cs" />
+    <Compile Include="Network\SocketServer.cs" />
+    <Compile Include="Packet\PacketReader.cs" />
+    <Compile Include="Packet\PacketWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DelayedAction.cs" />
+    <Compile Include="Utility\ListExtensions.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\Miscellaneous.cs" />
+    <Compile Include="Utility\ModelFieldAttribute.cs" />
+    <Compile Include="Utility\Randomizer.cs" />
+    <Compile Include="Utility\ReadFile.cs" />
+    <Compile Include="Utility\SaveFile.cs" />
+    <Compile Include="Utility\Singleton.cs" />
+    <Compile Include="Utility\TimeHelper.cs" />
+    <Compile Include="Utility\TypeConverter.cs" />
+    <Compile Include="Utility\Vector2.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
